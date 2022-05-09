@@ -6,13 +6,10 @@ volumes:
 services:
   speedtest:
     build: ./speedtest
-    privileged: true
     restart: never
     volumes:
         - 'speedtest-data:/data'
     network_mode: host
-    labels:
-      io.balena.features.supervisor-api: 1
   connector:
     image:  balenablocks/connector
     restart: always
